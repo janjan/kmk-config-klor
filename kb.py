@@ -37,6 +37,15 @@ class KMKKeyboard(_KMKKeyboard):
     rx = pins[6]
     tx = pins[1]
     buzzer_a = pins[11]
+    rgb_pixel_pin = pins[0]
+    led_key_pos =[
+           18, 13, 12,  6,  5,                  26, 27, 33, 34, 39, 
+       19, 17, 14, 11,  7,  4,                  25, 28, 32, 35, 38, 40,
+       20, 16, 15, 10,  8,  3,                  24, 29, 31, 36, 37, 41,
+                        9,  2, 1, 0,    21, 22, 23, 30, 
+    ]
+    brightness_limit = 0.3
+    num_pixels = 42
     # NOQA
     # flake8: noqa
     coord_mapping = [

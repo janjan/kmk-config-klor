@@ -13,6 +13,7 @@ from kmk.modules.layers import Layers
 from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.split import Split, SplitType, SplitSide
 from kmk.extensions.peg_oled_Display import Oled,OledDisplayMode,OledReactionType,OledData
+from kmk.extensions.peg_rgb_matrix import Rgb_matrix,Rgb_matrix_data,Color
 
 
 keyboard = KMKKeyboard()
@@ -66,6 +67,20 @@ if name.endswith('L'):
     buzzer.duty_cycle = OFF
 # Buzzer code ends here ---
 
+# Per key RGB starts here ---
+rgb_ext = Rgb_matrix(
+    ledDisplay=[
+                      [85, 0, 255], [85, 0, 255], [85, 0, 255],  [85, 0, 255],  [85, 0, 255],                                           [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], 
+        [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],  [85, 0, 255],  [85, 0, 255],                                           [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+        [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],  [85, 0, 255],  [85, 0, 255],                                           [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255],
+                                                                 [85, 0, 255],  [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], [85, 0, 255], 
+    ],
+    split=True,
+    rightSide=False,
+    disable_auto_write=True,
+)
+keyboard.extensions.append(rgb_ext)
+# Per key RGB ends here ---
 
 # Key aliases
 xxxxxxx = KC.NO
